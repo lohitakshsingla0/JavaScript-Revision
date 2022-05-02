@@ -4,7 +4,7 @@ class User{
         this.email= email;
     }
 
-    courseList = [];
+    #courseList = [];
     getInfo(){
         return {
             name: this.name,
@@ -13,11 +13,11 @@ class User{
     }
 
     enrollCourse(name){
-        this.courseList.push(name);
+        this.#courseList.push(name);
     }
      
     getCourseName(){
-        return this.courseList;
+        return this.#courseList;
     }
 }
 
@@ -25,3 +25,10 @@ class User{
 
 
 module.exports = User;
+
+
+const ad = new User ("Adwaith","ad@234.com")
+ad.enrollCourse("Reactaaaa");
+
+console.log(ad.getCourseName());
+console.log(ad.courseList);
